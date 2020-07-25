@@ -42,6 +42,9 @@
 
 	</header>
 
+<div id="book_banner">
+  <img src="../img/BookBanner.jpg" width=100% height="340px">
+</div>
 	
 
 
