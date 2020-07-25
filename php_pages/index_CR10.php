@@ -68,7 +68,7 @@ $result = mysqli_query($conn, $sql);
 
 
  while ($row = mysqli_fetch_assoc($result)) {
-        printf("<b> '%s' (%s) %s </b><br> author id %s publisher id %s ISBN %s <br>",
+        printf("<b><i> '%s' </i> (%s) %s </b><br> author id %s | publisher id %s | ISBN %s <br>",
                      $row["title"], $row["type"],$row["content_description"], $row["author_id"], $row["fk_publisher_id"], $row["isbn"]);
  } 
 
@@ -104,6 +104,37 @@ $result = mysqli_query($conn, $sql);
  while ($row = mysqli_fetch_assoc($result)) {
         printf("(author_id %s) - %s %s <br>",
                      $row["author_id"], $row["name"],$row["surname"]);
+ } 
+
+
+
+?>
+</section>
+
+<h1> Publisher list </h1>
+
+<section class="data_lists">
+<?php
+
+
+$servername = "localhost";
+$username   = "root";
+$password   = "";
+$dbname     = "cr10_carina_biglibrary";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+   die("Connection failed: " . mysqli_connect_error() . "\n");
+}
+
+$sql = "SELECT name, publisher_id, size, address FROM publisher";
+$result = mysqli_query($conn, $sql);
+
+
+ while ($row = mysqli_fetch_assoc($result)) {
+        printf("<b> %s </b>| id %s | size: %s | address: %s <br>",
+                     $row["name"], $row["publisher_id"],$row["size"],$row["address"]);
  } 
 
 
