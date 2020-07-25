@@ -46,10 +46,43 @@
   <img src="../img/BookBanner.jpg" width=100% height="340px">
 </div>
 	
+<h1> Media items </h1>
+
+<section class="data_lists">
+<?php
+
+
+$servername = "localhost";
+$username   = "root";
+$password   = "";
+$dbname     = "cr10_carina_biglibrary";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+   die("Connection failed: " . mysqli_connect_error() . "\n");
+}
+
+$sql = "SELECT title, type, content_description, author_id, fk_publisher_id,isbn FROM media_item";
+$result = mysqli_query($conn, $sql);
+
+
+ while ($row = mysqli_fetch_assoc($result)) {
+        printf("<b> '%s' (%s) %s </b><br> author id %s publisher id %s ISBN %s <br>",
+                     $row["title"], $row["type"],$row["content_description"], $row["author_id"], $row["fk_publisher_id"], $row["isbn"]);
+ } 
+
+
+
+?>
+</section>
+
+
 
 
 <h1> Author list </h1>
-<section id="author_list">
+
+<section class="data_lists">
 <?php
 
 
@@ -77,6 +110,8 @@ $result = mysqli_query($conn, $sql);
 
 ?>
 </section>
+
+
  <footer>
 
   <div id="footer_div1">

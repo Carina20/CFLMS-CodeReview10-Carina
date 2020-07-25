@@ -32,10 +32,9 @@ h1 {
 }
 
 
-#author_list {
+.data_lists {
 	color: black;
 	text-align: center;
-	font-weight: bold;
 }
 
 #footer_div1 {
