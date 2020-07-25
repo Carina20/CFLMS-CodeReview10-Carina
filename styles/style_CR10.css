@@ -1,42 +1,54 @@
 .header_hero {
 	height: 100px;
-	background-color:rgb(204,0,102);
+	background-color:rgb(0,102,204);
 }
 
 .hero_text {
 	text-align: center;
 	font-size:44pt;
-	color: white;
+	color: rgb(255,255,147);
 }
 
 nav {
-	background-color: rgb(255,80,80);
+	background-color: rgb(221,221,221);
 }
 
 #navbarDropdown {
-	color: white;
+	color: black;
 }
 
 #home {
-	color: white;
+	color: black;
 }
 
 body {
-	background: url();
+	background: url(../img/background_light.jpg);
+	background-size: 100%;
+}
+
+h1 {
+	color: rgb(255,255,147);
+	text-align: center;
+}
+
+#author_list {
+	color: black;
+	text-align: center;
+	font-weight: bold;
 }
 
 #footer_div1 {
-	background-color: rgb(255,80,80);
+	background-color: rgb(221,221,221);
 	height:50px;
 }
 
 #footer_div2 {
-	background-color: rgb(204,0,102);
+	background-color:rgb(0,102,204);
 	height:70px;
 }
 
 .footer_logo {
-	color: white;
+	color: rgb(255,255,147);
 	font-size:12pt;
 	text-align: center;
 	padding-top:20px;

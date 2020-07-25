@@ -46,6 +46,7 @@
 
 
 <h1> Author list </h1>
+<section id="author_list">
 <?php
 
 
@@ -72,7 +73,7 @@ $result = mysqli_query($conn, $sql);
 
 
 ?>
-
+</section>
  <footer>
 
   <div id="footer_div1">
