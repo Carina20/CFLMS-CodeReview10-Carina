@@ -58,5 +58,17 @@ if (!$conn) {
 
 ?>
 
+
+ <footer>
+
+  <div id="footer_div1">
+  </div>
+
+  <div id="footer_div2">
+    <div class="footer_logo">Big Library</div>
+  </div>
+
+  </footer>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8" author="Carina" content= "Welcome to our library">
 	<meta name="viewport" content ="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<title>Welcome to our Big Library</title>
+	<title>Insert media items</title>
 	<link rel="stylesheet" type="text/css" href="../styles/style_CR10.css">
 </head>
 <body>
@@ -42,21 +42,49 @@
 
 	</header>
 
-    <?php
+<form action="insertdb.php" method ="post">
+   <p>
+       <label  for="author_id">Author ID</label>
+       <input type="number" name= "author_id" id="input_author_id">
+   </p >
+   <p>
+       <label for ="content_description">Content description</label>
+       <input  type="text" name="content_description"  id="input_content_description">
+   </p>
+   <p>
+       <label for= "fk_publisher_id">Publisher ID</label>
+       <input  type="number" name= "publisher_id" id="input_publisher_id">
+   </p>
+    <p>
+       <label for= "image">Image URL</label>
+       <input  type="text" name= "image" id="input_image">
+   </p>
+    <p>
+       <label for= "isbn">ISBN</label>
+       <input  type="number" name= "isbn" id="input_isbn">
+   </p>
+    <p>
+       <label for= "title">Title</label>
+       <input  type="text" name= "title" id="input_title">
+   </p>
+    <p>
+       <label for= "type">Type</label>
+       <input  type="text" name= "type" id="input_type">
+   </p>
+   <input type= "submit" value="Submit">
+</form>
+    
 
+ <footer>
 
-$servername = "localhost";
-$username   = "root";
-$password   = "";
-$dbname     = "cr10_carina_biglibrary";
+  <div id="footer_div1">
+  </div>
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+  <div id="footer_div2">
+    <div class="footer_logo">Big Library</div>
+  </div>
 
-if (!$conn) {
-   die("Connection failed: " . mysqli_connect_error() . "\n");
-}
-
-?>
+  </footer>
 
 </body>
 </html>
