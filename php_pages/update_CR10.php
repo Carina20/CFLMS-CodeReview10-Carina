@@ -31,9 +31,9 @@
           Database actions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="insert_CR10.php">Insert</a>
-          <a class="dropdown-item" href="update_CR10.php">Update</a>
-          <a class="dropdown-item" href="delete_CR10.php">Delete</a>
+          <a class="dropdown-item" href="insert-form_CR10.html">Insert</a>
+          <a class="dropdown-item" href="update-form_CR10.html">Update</a>
+          <a class="dropdown-item" href="delete-form_CR10.html">Delete</a>
         </div>
       </li>
     </ul>

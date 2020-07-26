@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8" author="Carina" content= "Welcome to our library">
@@ -11,8 +11,10 @@
 	<title>Welcome to our Big Library</title>
 	<link rel="stylesheet" type="text/css" href="../styles/style_CR10.css">
 </head>
+
 <body>
 <header>
+
 		<div class="header_hero">
 			<div class="hero_text"> Welcome to our Big Library</div>
 		</div>
@@ -32,8 +34,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="insert-form_CR10.html">Insert</a>
-          <a class="dropdown-item" href="update_CR10.php">Update</a>
-          <a class="dropdown-item" href="delete_CR10.php">Delete</a>
+          <a class="dropdown-item" href="update_CR10.html">Update</a>
+          <a class="dropdown-item" href="delete-form_CR10.php">Delete</a>
         </div>
       </li>
     </ul>
@@ -49,8 +51,8 @@
 <h1> Media items </h1>
 
 <section class="data_lists">
-<?php
 
+<?php
 
 $servername = "localhost";
 $username   = "root";
