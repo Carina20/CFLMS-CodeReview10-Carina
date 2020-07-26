@@ -1,3 +1,20 @@
+
+
+<?php 
+
+require_once 'dbconnect_CR10.php';
+
+if ($_GET['isbn']) {
+   $isbn = $_GET['isbn'];
+
+   $sql = "SELECT * FROM media_item WHERE isbn = {$isbn}";
+   $result = $connect->query($sql);
+   $data = $result->fetch_assoc();
+
+   $connect->close();
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -43,19 +60,11 @@
 	</header>
 
 
-  <form action="delete_CR10.php" method ="post">
+  <form action="delete_CR10.php" method="post">
 
-    <p>
-       <label for= "isbn">ISBN</label>
-       <input  type="number" name= "isbn" id="input_isbn">
-   </p>
-
-    <p>
-       <label for= "title">Title</label>
-       <input  type="text" name= "title" id="input_title">
-   </p>
-
-  <input type= "submit" value="Delete">
+   <input type="hidden" name="isbn" value="<?php echo $data['isbn'] ?>" />
+   <button type="submit">Delete</button>
+   
 
   </form>
 
@@ -78,3 +87,9 @@
 
 </body>
 </html>
+
+
+
+<?php
+}
+?>

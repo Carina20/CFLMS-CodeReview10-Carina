@@ -18,7 +18,7 @@
 		<div class="header_hero">
 			<div class="hero_text"> Welcome to our Big Library</div>
 		</div>
-	<nav class="navbar navbar-expand navbar-light">
+	<nav class="navbar navbar-expand">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,15 +28,8 @@
       <li class="nav-item active">
         <a class="nav-link" id="home" href="index_CR10.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Database actions
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="insert-form_CR10.html">Insert</a>
-          <a class="dropdown-item" href="update_CR10.html">Update</a>
-          <a class="dropdown-item" href="delete-form_CR10.php">Delete</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link text-dark" id="insert" href="insert-form_CR10.html">Insert new item</a>
       </li>
     </ul>
   </div>
@@ -70,9 +63,9 @@ $result = mysqli_query($conn, $sql);
 
 
  while ($row = mysqli_fetch_assoc($result)) {
-        printf("<b><i> '%s' </i> (%s) %s </b><br> author id %s | publisher id %s | ISBN %s <br>",
+        printf("<b><i> '%s' </i> (%s) %s </b><br> author id %s | publisher id %s | ISBN %s <a href='update_CR10.php?isbn=" .$row['isbn']."'><button type='button'>Update</button></a><a href='delete_CR10.php?isbn=" .$row['isbn']."'><button type='button'>Delete</button></a><br>", 
                      $row["title"], $row["type"],$row["content_description"], $row["author_id"], $row["fk_publisher_id"], $row["isbn"]);
- } 
+ }
 
 
 
