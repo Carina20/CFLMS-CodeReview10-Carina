@@ -23,6 +23,7 @@ $type = mysqli_real_escape_string($conn, $_POST['type']);
 $sql = "INSERT INTO media_item (author_id, content_description, fk_publisher_id, image, isbn, title, type) VALUES ('$author_id', '$content_description', '$fk_publisher_id','$image', '$isbn', '$title', '$type')";
 if (mysqli_query($conn, $sql)) {
     echo "<h1>New record created.<h1>";
+    echo "<a href='index_CR10.php'><button type='button'>Back</button></a>";
 } else {
     echo "<h1>Record creation error for: </h1>" .
          "<p>"  . $sql . "</p>" .
