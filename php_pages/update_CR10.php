@@ -5,58 +5,74 @@ require_once 'dbconnect_CR10.php';
 if ($_GET['isbn']) {
    $isbn = $_GET['isbn'];
 
-   $sql = "SELECT * FROM media_item WHERE isbn = {$isbn}" ;
-   $result = $connect->query($sql);
-
+   $sql = "SELECT * FROM media_item WHERE isbn = $isbn";
+   $result = mysqli_query($conn,$sql);
    $data = $result->fetch_assoc();
 
-   $connect->close();
-
+   $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-   <title >Update item </title>
+   <title>Update item</title>
 
    <style type= "text/css">
        fieldset {
            margin : auto;
            margin-top: 100px;
             width: 50%;
+            font-family: Arial;
        }
 
        table  tr th {
            padding-top: 20px;
        }
+
+       table {
+        font-size:11pt;
+       }
+
    </style>
 
 </head>
 <body>
 
 <fieldset>
-   <legend>Update item</legend>
+   <legend><b>Update item</b></legend>
 
    <form action="more_actions/a_update_CR10.php"  method="post">
-       <table  cellspacing="0" cellpadding= "0">
+       <b><table cellspacing="3" cellpadding= "3">
            <tr>
-               <th>author id</th>
-               <td><input type="text"  name="first_name" placeholder ="First Name" value="<?php echo $data['first_name'] ?>"  /></td>
+               <td>Author ID</td>
+               <td><input type="number"  name="author_id" placeholder ="Author ID" value="<?php echo $data['author_id'] ?>"  /></td>
            </tr >    
            <tr>
-               <th>Last Name</th>
-               <td><input type= "text" name="last_name"  placeholder="Last Name" value ="<?php echo $data['last_name'] ?>" /></td >
+               <td>Content description</td>
+               <td><input type= "text" name="content_description"  placeholder="Content description" value ="<?php echo $data['content_description'] ?>" /></td>
            </tr>
            <tr>
-               <th >Date of birth</th>
-               <td><input type ="text" name= "date_of_birth" placeholder= "Date of birth" value= "<?php echo $data['date_of_birth'] ?>" /></td>
+               <td>Publisher ID</td>
+               <td><input type ="number" name= "publisher_id" placeholder= "Publisher ID" value= "<?php echo $data['fk_publisher_id'] ?>" /></td>
+           </tr>
+              <tr>
+               <td>Image</td>
+               <td><input type ="text" name= "image" placeholder= "Image" value= "<?php echo $data['image'] ?>" /></td>
+           </tr>
+            <tr>
+               <td>Title</td>
+               <td><input type ="text" name= "title" placeholder= "Title" value= "<?php echo $data['title'] ?>" /></td>
+           </tr>
+              <tr>
+               <td>Type</td>
+               <td><input type ="text" name= "type" placeholder= "Type" value= "<?php echo $data['type'] ?>" /></td>
            </tr>
            <tr>
-               <input type= "hidden" name= "id" value= "<?php echo $data['id']?>" />
-               <td><button  type= "submit">Save Changes</button ></td>
-               <td><a  href= "index.php"><button  type="button" >Back</button ></a ></td >
+               <input type= "hidden" name= "isbn" value= "<?php echo $data['isbn']?>" />
+               <td><br><button type= "submit">Save Changes</button ></td>
+               <td><br><a href= "index_CR10.php"><button type="button">Back</button ></a></td>
            </tr>
-       </table>
+       </table></b>
    </form >
 
 </fieldset >
